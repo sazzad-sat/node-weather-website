@@ -17,7 +17,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (response.body.error) {
             callback('Invalid location. Try again.', undefined);
         } else {
-            callback(undefined, `It is currently ${fcData.weather_descriptions[0]}, Temperature ${fcData.temperature} degrees out. Feels like ${fcData.feelslike} degrees out.`);
+            callback(undefined, `${fcData.weather_descriptions[0]}. It is currently ${fcData.temperature} degrees out. Feels like ${fcData.feelslike} degrees out. The humidity is ${fcData.humidity}%.`);
         }
     })
 }
